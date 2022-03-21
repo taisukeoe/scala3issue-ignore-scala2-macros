@@ -5,5 +5,6 @@ trait A[T]
 
 object A {
   implicit def aString: A[String] = new A[String] {}
-  implicit def aAnyVal[T <: AnyVal]: A[T] = macro MyMacros.anyVal[T]
+  // If removing `<: AnyVal`, it compiles even with -Xignore-scala2-macros
+  implicit def aAnyVal[T <: AnyVal]: A[T] = macro MyMacros.nothing[T]
 }
