@@ -1,8 +1,10 @@
+ThisBuild / scalaVersion := "2.13.8"
+
 lazy val scala3Proj =
   project
     .settings(
       scalaVersion := "3.1.1",
-      scalacOptions += "-Xignore-scala2-macros"
+      // scalacOptions += "-Xignore-scala2-macros"
     )
     .dependsOn(scala2Proj)
 

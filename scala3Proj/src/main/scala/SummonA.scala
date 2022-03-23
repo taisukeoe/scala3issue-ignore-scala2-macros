@@ -1,1 +1,3 @@
-val aString = summon[A[String]]
+object SummonA {
+  val aString = implicitly[A[String]]
+}
